@@ -5,7 +5,7 @@ import time
 poczatek = time.time()
 import numpy as np
 
-fa = face_alignment.FaceAlignment(face_alignment.LandmarksType._2D, flip_input=False, device='cpu')
+fa = face_alignment.FaceAlignment(face_alignment.LandmarksType._2D, flip_input=False, device='cuda')
 input = cv2.imread("testwojtek.png")
 preds = fa.get_landmarks(input)
 
