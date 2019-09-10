@@ -32,3 +32,13 @@ print(f"dokladnosc: {accuracy_score(y_test, y_pred)}")
 
 # dokladnosc algorytmu z wbudowanej funkcji w metodzie alorgytmu uczenia
 print(f"dokladnosc: {ppn.score(X_test_std, y_test)}")
+
+from plots import plot_decision_regions
+import matplotlib.pyplot as plt
+X_combined_std=np.vstack((X_train_std,X_test_std))
+y_combined=np.hstack((y_train,y_test))
+plot_decision_regions(X=X_combined_std,y=y_combined,classifier=ppn,test_idx=range(105,150))
+plt.xlabel('dlugosc platka [standaryzowana]')
+plt.ylabel('szerokosc platka [standaryzowana]')
+plt.legend(loc='upper left')
+plt.show()
