@@ -22,7 +22,7 @@ class AdalineGD(object):
         return self
 
     def netInput(self, X):
-        return np.dot(X, self.w_[1:] + self.w_[0])
+        return np.dot(X, self.w_[1:]) + self.w_[0]
 
     def activation(self, X):
         return X
